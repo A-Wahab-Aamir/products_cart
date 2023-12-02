@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="title_icon.png">
+    <style>
+        @font-face {
+            font-family: bungee;
+            src: url(./Bungee-Regular.ttf);
+        }
+        
+        @font-face {
+            font-family: lato;
+            src: url(./Lato-Black.ttf);
+        }
+        
+        @font-face {
+            font-family: poppins;
+            src: url(./Poppins-Black.ttf);
+        }
+        
+        body {
+            background-color: #0e0c18;
+            font-family: lato, Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        
+        .container {
+            padding: 16px;
+            background-color: transparent;
+            width: 700px;
+            margin: 50px 23% 50px 23%;
+            box-shadow: 0px 0px 5px 8px #31b7ad;
+            border-radius: 10px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #e61c58;
+        }
+        /* Full-width input fields */
+        
+        input[type=text],
+        input[type=password] {
+            width: 95%;
+            padding: 15px;
+            margin: 5px 0px 22px 0;
+            color: white;
+            display: inline-block;
+            border: 2px solid #31b7ad;
+            border-radius: 5px;
+            background-color: transparent;
+        }
+        /* Overwrite default styles of hr */
+        
+        hr {
+            border: 1px solid grey;
+            margin-bottom: 25px;
+        }
+        /* Set a style for the submit button */
+        
+        .registerbtn {
+            background-color: #e61c58;
+            color: black;
+            font-family: poppins;
+            font-size: 17px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.4s;
+        }
+        
+        .registerbtn:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <hr>
+
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" id="name">
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" id="pass">
+
+        <input type="button" class="registerbtn" value="Login" onclick="log()">
+
+    </div>
+    <script>
+        var getname = localStorage.getItem('myname1')
+
+        var getpass = localStorage.getItem('mypass1')
+
+        document.getElementById('name').value = getname;
+
+        document.getElementById('pass').value = getpass;
+
+        function log() {
+            localStorage.setItem("username", getname)
+            window.location.href = "products.html"
+        }
+    </script>
+</body>
+
+
+</html>

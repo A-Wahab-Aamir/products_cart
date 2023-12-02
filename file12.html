@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {}
+        
+        .div1 {
+            width: 300px;
+            height: 400px;
+            border: 2px solid black;
+            display: inline-block;
+            text-align: center;
+            margin: 10px;
+        }
+        
+        .div1 img {
+            width: 100%;
+            height: 280px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main">
+
+    </div>
+
+</body>
+<script src="file.js"></script>
+
+<script>
+    for (var i = 1; i <
+        product.length; i++) {
+        document.getElementById('main').innerHTML += ` <div class="div1">
+<img src="${product[i].image}" alt="">
+        <h1>${product[i].name}</h1>
+        <p>${product[i].description}</p>
+ <input type="button" value="Buy Now" onclick="alert('hello')">
+
+</div>
+    `
+    }
+</script>
+
+</html>
+
+</html>

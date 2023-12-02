@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <title>Title</title>
+</head>
+<style>
+    tr th img {
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h1 class="display-5 text-center">COMPARE YOUR PRODUCTS</h1>
+        <div class="col-md-9 mx-auto">
+            <table class="table">
+                <tr>
+                    <th>SELECT YOUR PRODUCTS</th>
+                    <th>
+                        <select name="" id="sel1" class="form-control" onclick="Item1(this.value)">
+                            <option value="0">---Select Your Produts---</option>
+                        </select>
+                    </th>
+                    <th>
+                        <select name="" id="sel2" class="form-control" onclick="Item2(this.value)">
+                            <option value="0">---Select Your Produts---</option>
+                        </select>
+                    </th>
+                </tr>
+                <tr>
+                    <th>PRODUCT IAMGE</th>
+                    <th><img src="images/0.png" alt="" id="img1"></th>
+                    <th><img src="images/0.png" alt="" id="img2"></th>
+                </tr>
+                <tr>
+                    <th>PRODUCT NAME</th>
+                    <th>
+                        <h5 id="d1">N/A</h5>
+                    </th>
+                    <th>
+                        <h5 id="d4">N/A</h5>
+                    </th>
+                </tr>
+                <tr>
+                    <th>PRODUCT DETAIL</th>
+                    <th>
+                        <h5 id="d2">N/A</h5>
+                    </th>
+                    <th>
+                        <h5 id="d5">N/A</h5>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="file.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <script>
+        for (var i = 1; i < product.length; i++) {
+            document.getElementById('sel1').innerHTML += `
+            <option value="${i}">${product[i].name}</option>
+            `
+        }
+
+        function Item1(a) {
+            var select2 = document.getElementById('sel2').value;
+            if (a != select2) {
+                document.getElementById('img1').src = product[a].image
+                document.getElementById('d1').innerHTML = product[a].name;
+                document.getElementById('d2').innerHTML = product[a].detail;
+                document.getElementById('d3').innerHTML = product[a].price;
+
+            } else {
+                document.getElementById('img1').src = product[0].image
+                document.getElementById('d1').innerHTML = product[0].name;
+                document.getElementById('d2').innerHTML = product[0].detail;
+                document.getElementById('d3').innerHTML = product[0].price;
+            }
+
+
+        }
+
+
+        for (var i = 1; i < product.length; i++) {
+            document.getElementById('sel2').innerHTML += `
+            <option value="${i}">${product[i].name}</option>
+            `
+        }
+
+        function Item2(a) {
+            var select1 = document.getElementById('sel1').value;
+            if (a != select1) {
+                document.getElementById('img2').src = product[a].image
+                document.getElementById('d4').innerHTML = product[a].name;
+                document.getElementById('d5').innerHTML = product[a].detail;
+                document.getElementById('d6').innerHTML = product[a].price;
+
+            } else {
+                document.getElementById('img2').src = product[0].image
+                document.getElementById('d4').innerHTML = product[0].name;
+                document.getElementById('d5').innerHTML = product[0].detail;
+                document.getElementById('d6').innerHTML = product[0].price;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
